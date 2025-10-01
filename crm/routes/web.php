@@ -30,12 +30,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::resource('invoices', App\Http\Controllers\InvoiceController::class);
 });
 
-// 👤 Rutas para usuario normal (solo ver listados)
-Route::middleware(['auth', 'role:user'])->group(function () {
-    Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
-    Route::get('/incidents', [IncidentController::class, 'index'])->name('incidents.index');
-    Route::get('/invoices', [InvoiceController::class, 'index'])->name('invoices.index');
-});
+
 
 require __DIR__.'/auth.php';
 

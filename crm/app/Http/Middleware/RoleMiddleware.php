@@ -20,12 +20,6 @@ class RoleMiddleware
         }
 
         return $next($request);
-
-        if (!Auth::check()) {
-    dd('Usuario NO autenticado');
-}
-
-dd('Usuario autenticado con rol:', Auth::user()->role, 'Rol requerido:', $role);
     }
 }
 
